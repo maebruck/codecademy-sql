@@ -58,3 +58,15 @@ SELECT COUNT(*) FROM stocks WHERE price > 200;
 SELECT *, MIN(price) AS min FROM stocks;
 SELECT *, MAX(price) AS max FROM stocks;
 SELECT * FROM stocks ORDER BY price;
+
+-- Additional Challenges
+-- Intermediate Challenge
+-- •	Explore using aggregate functions to look at key statistics about the data (e.g., min, max, average).
+SELECT symbol, MIN(price), MAX(price), AVG(price) FROM stocks;
+-- doesn't really work, like comaring apples and bananas.
+-- •	Group the data by stock and repeat. How do the stocks compare to each other?
+SELECT symbol, MIN(price) AS min, MAX(price) AS max, MAX(price)-MIN(price) AS range, AVG(price) AS average FROM stocks GROUP BY symbol;
+-- GOOG has highest range, but also has far higher values, so not very surprising
+-- •	Which of the rows have a price greater than the average of all prices in the dataset?
+SELECT * FROM stocks WHERE price > (SELECT AVG(price) FROM stocks);
+--not surprising that it is the google stock…
