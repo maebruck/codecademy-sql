@@ -13,6 +13,7 @@
 1. Cryptocurrency Exchange
 1. Multiple Tables with REBU
 1. World Populations SQL Practice II
+1. Usage funnels with *a glasses company*
 
 ### "Independent Projects"
 1. Watching the Stock Market
